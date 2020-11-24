@@ -13,12 +13,12 @@
   
   <meta name="description" content="&emsp;&emsp;shell是类Unix系统中超...">
   <meta name="author" content="刘超智">
-  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
-  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
-  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
-  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  <link rel="icon" href="/images/bird-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/bird-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/bird-200x200.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/bird-200x200.png" color="#333333">
   
-    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileImage" content="/images/bird-144x144.png">
     <meta rel="msapplication-TileColor" content="#000000">
   
   
@@ -43,12 +43,12 @@
       
         
         
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/atom-one-light.min.css" name="highlight-style" mode="light">
 
       
         
         
-<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/atom-one-dark.min.css" name="highlight-style" mode="dark">
 
       
   
@@ -61,14 +61,14 @@
       fancybox: true,
       pjax: false,
       lazyload: {
-        enable: true,
+        enable: false,
         only_post: 'false',
         loading: '/images/theme/loading.gif'
       },
       donate: {
         enable: true,
-        alipay: 'https://pic.izhaoo.com/alipay.jpg',
-        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+        alipay: '/images/alipay-money.jpg',
+        wechat: '/images/wechat-money.jpg'
       },
       galleries: {
         enable: true
@@ -163,20 +163,22 @@
       <div class="col-xl-6"><article class="article">
   <div class="wrap">
     <section class="head">
-  <img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJFRot.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <img src="https://s1.ax1x.com/2020/10/29/BJFRot.png" draggable="false">
   <div class="head-mask">
     <h1 class="head-title">配置一个简洁，高效的zsh</h1>
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 29, 2020</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2358</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2283</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>&emsp;&emsp;我笔记本电脑使用的是Archlinux，服务器使用的是Ubuntu。主要介绍这两个发行版的配置方法，红帽系的发行版请自行尝试。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGFqHI.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGFqHI.png</span></p>
+        <p>&emsp;&emsp;shell是类Unix系统中超级好用的工具，而zsh是shell中的佼佼者，但是现在网上一搜索zsh的配置方案，遍地都是的互相复制粘贴的oh-my-zsh配置方案。<strong>事实上oh-my-zsh并不好用</strong>，严重拖慢zsh的速度，反而让你的工作并不高效。现在将我自己的使用方案分享给大家，教大家配置一个高效好用的zsh。</p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BJFRot.png" alt="BJFRot.png"></p>
+<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>&emsp;&emsp;我笔记本电脑使用的是Archlinux，服务器使用的是Ubuntu。主要介绍这两个发行版的配置方法，红帽系的发行版请自行尝试。</p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BGFqHI.png" alt="BGFqHI.png"></p>
 <p>&emsp;&emsp;我个人喜欢尽量从发行版的源里安装。从源安装具有方便，稳定，容易维护等优点。</p>
 <h3 id="Archlinux-安装-zsh"><a href="#Archlinux-安装-zsh" class="headerlink" title="Archlinux 安装 zsh"></a>Archlinux 安装 zsh</h3><p>&emsp;&emsp;终端里面输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -Sy zsh<br></code></pre></td></tr></table></figure>
@@ -207,9 +209,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chsh -s /usr/bin/zsh<br></code></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;Archlinux 和 Ubuntu 都是同样的操作，然后注销并重新登录，就启用了zsh。第一次进入zsh会自动出现一个配置界面，这个界面可以根据需要自定义zsh。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGvNVO.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGvNVO.png</span></p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BGvNVO.png" alt="BGvNVO.png"></p>
 <p>&emsp;&emsp;在这里输入 1 就可以进入配置界面了。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGxAFe.md.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGxAFe.md.png</span></p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BGxAFe.md.png" alt="BGxAFe.md.png"></p>
 <p>&emsp;&emsp;配置界面中各个菜单代表的意思分别是：</p>
 <ul>
 <li>1：设置命令历史记录相关的选项</li>
@@ -228,12 +230,13 @@
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/powerlevel9k/</span>powerlevel9k.zsh-theme<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-autosuggestions/</span>zsh-autosuggestions.zsh<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-syntax-highlighting/</span>zsh-syntax-highlighting.zsh<br></code></pre></td></tr></table></figure>
 <p>&emsp;&emsp;这样就成功的启用了插件和主题，插件不需要额外的配置就很好用，有额外配置需求的可以自行研究。</p>
 <p>&emsp;&emsp;而 <code>powerlevel10k</code> 主题在首次进入时，会触发一个配置界面。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJ9yE6.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJ9yE6.png</span></p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BJ9yE6.png" alt="BJ9yE6.png"></p>
 <p>&emsp;&emsp;根据提示和你的喜好一步步完成配置即可。</p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJC6Ln.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJC6Ln.png</span></p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BJC6Ln.png" alt="BJC6Ln.png"></p>
 <p>这里可以选择你喜欢的 <code>prompt</code>。</p>
 <p><strong>配置完成后就可以愉快的使用啦！</strong></p>
-<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJPlT0.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJPlT0.png</span></p>
+<p><img src="https://s1.ax1x.com/2020/10/29/BJPlT0.png" alt="BJPlT0.png"></p>
+
       </section>
       <section class="extra">
         
@@ -248,7 +251,7 @@
         
           <section class="donate">
   <div id="qrcode-donate">
-    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+    <img src="/images/alipay-money.jpg">
   </div>
   <div class="icon">
     <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>

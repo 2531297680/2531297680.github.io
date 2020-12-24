@@ -40,6 +40,9 @@
 .navbar {
   background-color: rgba(var(--color-background-rgb), 0.8) !important;
 }
+.zui-notification {
+  background-color: rgba(var(--color-background-rgb), 0.7) !important;
+}
 *,
 *::before,
 *::after {
@@ -680,6 +683,54 @@ body span {
     max-width: 100%;
   }
 }
+.zui-notification {
+  position: fixed;
+  margin: 0;
+  padding: 16px 24px;
+  top: 70px;
+  right: 15px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 2020;
+  opacity: 0;
+  transform: translateX(400px);
+  transition: opacity 0.3s, transform 0.4s, top 0.4s;
+  background-color: rgba(255,255,255,0.7);
+  box-shadow: 0 3px 6px -4px rgba(0,0,0,0.12), 0 6px 16px 0 rgba(0,0,0,0.08), 0 9px 28px 8px rgba(0,0,0,0.05);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 2px;
+}
+.zui-notification span {
+  font-size: 1.05em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  padding-right: 20px;
+  color: var(--color-text);
+}
+.zui-notification p {
+  color: var(--color-text);
+  text-align: justify;
+  margin: 0;
+}
+.zui-notification i {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 1.2em;
+  line-height: 22px;
+  color: var(--color-text-third);
+}
+.zui-notification i:hover {
+  cursor: pointer;
+  color: var(--color-text);
+}
+.zui-notification.in {
+  transform: translateX(0);
+  opacity: 1;
+}
 .zui-message {
   position: fixed;
   margin: 0;
@@ -1053,7 +1104,7 @@ body span {
 .preview .preview-image .preview-cursor {
   text-align: center;
   font-size: 3.5em;
-  padding: 1em;
+  padding: 1em 0.2em;
   font-family: 'Quicksand', 'Vollkorn', serif;
   font-weight: 300;
   color: #fff;
@@ -2187,33 +2238,27 @@ body span {
   }
 }
 .gallery .wrap {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 200px);
-  grid-gap: 10px;
+  display: flex;
   justify-content: center;
-}
-@media (max-width: 768px) {
-  .gallery .wrap {
-    grid-template-columns: repeat(3, minmax(100px, 300px));
-  }
-}
-@media (max-width: 576px) {
-  .gallery .wrap {
-    grid-template-columns: repeat(2, minmax(100px, 300px));
-  }
+  align-items: center;
+  position: relative;
+  width: 100%;
 }
 .gallery .wrap .item {
-  position: relative;
-  padding-top: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 }
 .gallery .wrap .item:hover {
   filter: grayscale(100%);
 }
 .gallery .wrap .item img {
-  position: absolute;
   display: block;
   object-fit: cover;
+  max-width: 100%;
   width: 100%;
   height: 100%;
   top: 0;

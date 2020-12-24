@@ -91,7 +91,7 @@
         motto: {
           default: '我在开了灯的床头下，想问问自己的心啊。',
           api: 'https://v1.hitokoto.cn/?encode=text&c=a&c=b&c=c&c=d&c=e&c=f&c=g&c=h&c=i&c=j&c=k&c=l',
-          data_contents: '["data","content"]'
+          data_contents: ''
         },
       },
       qrcode: {
@@ -182,16 +182,16 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 29, 2020</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2283</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2356</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
         <p>&emsp;&emsp;shell是类Unix系统中超级好用的工具，而zsh是shell中的佼佼者，但是现在网上一搜索zsh的配置方案，遍地都是的互相复制粘贴的oh-my-zsh配置方案。<strong>事实上oh-my-zsh并不好用</strong>，严重拖慢zsh的速度，反而让你的工作并不高效。现在将我自己的使用方案分享给大家，教大家配置一个高效好用的zsh。</p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJFRot.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BJFRot.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJFRot.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJFRot.png</span></p>
 <h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>&emsp;&emsp;我笔记本电脑使用的是Archlinux，服务器使用的是Ubuntu。主要介绍这两个发行版的配置方法，红帽系的发行版请自行尝试。</p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGFqHI.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BGFqHI.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGFqHI.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGFqHI.png</span></p>
 <p>&emsp;&emsp;我个人喜欢尽量从发行版的源里安装。从源安装具有方便，稳定，容易维护等优点。</p>
 <h3 id="Archlinux-安装-zsh"><a href="#Archlinux-安装-zsh" class="headerlink" title="Archlinux 安装 zsh"></a>Archlinux 安装 zsh</h3><p>&emsp;&emsp;终端里面输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -Sy zsh<br></code></pre></td></tr></table></figure>
@@ -222,9 +222,9 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chsh -s /usr/bin/zsh<br></code></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;Archlinux 和 Ubuntu 都是同样的操作，然后注销并重新登录，就启用了zsh。第一次进入zsh会自动出现一个配置界面，这个界面可以根据需要自定义zsh。</p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGvNVO.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BGvNVO.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGvNVO.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGvNVO.png</span></p>
 <p>&emsp;&emsp;在这里输入 1 就可以进入配置界面了。</p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGxAFe.md.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BGxAFe.md.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGxAFe.md.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGxAFe.md.png</span></p>
 <p>&emsp;&emsp;配置界面中各个菜单代表的意思分别是：</p>
 <ul>
 <li>1：设置命令历史记录相关的选项</li>
@@ -243,12 +243,12 @@
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/powerlevel9k/</span>powerlevel9k.zsh-theme<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-autosuggestions/</span>zsh-autosuggestions.zsh<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-syntax-highlighting/</span>zsh-syntax-highlighting.zsh<br></code></pre></td></tr></table></figure>
 <p>&emsp;&emsp;这样就成功的启用了插件和主题，插件不需要额外的配置就很好用，有额外配置需求的可以自行研究。</p>
 <p>&emsp;&emsp;而 <code>powerlevel10k</code> 主题在首次进入时，会触发一个配置界面。</p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJ9yE6.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BJ9yE6.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJ9yE6.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJ9yE6.png</span></p>
 <p>&emsp;&emsp;根据提示和你的喜好一步步完成配置即可。</p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJC6Ln.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BJC6Ln.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJC6Ln.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJC6Ln.png</span></p>
 <p>这里可以选择你喜欢的 <code>prompt</code>。</p>
 <p><strong>配置完成后就可以愉快的使用啦！</strong></p>
-<p><img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJPlT0.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="BJPlT0.png"></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJPlT0.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJPlT0.png</span></p>
 
       </section>
       <section class="extra">

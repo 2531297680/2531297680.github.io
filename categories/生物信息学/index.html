@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Lang&#39;s Blog</title>
+  <title>生物信息学 - Lang&#39;s Blog</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
@@ -57,7 +57,7 @@
     var CONFIG = window.CONFIG || {};
     var ZHAOO = window.ZHAOO || {};
     CONFIG = {
-      isHome: true,
+      isHome: false,
       fancybox: true,
       pjax: false,
       lazyload: {
@@ -126,6 +126,24 @@
   
 
 
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+    </div>
+    <div class="center">分类</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
   
 
 <nav class="menu">
@@ -134,7 +152,7 @@
       <i class="iconfont iconbaseline-close-px"></i>
     </div>
     <ul class="menu-content"><li class="menu-item">
-        <a href="/ " class="underline active"> 首页</a>
+        <a href="/ " class="underline "> 首页</a>
       </li><li class="menu-item">
         <a href="/galleries/ " class="underline "> 摄影</a>
       </li><li class="menu-item">
@@ -152,147 +170,23 @@
   </div>
 </nav>
   <main id="main">
-  
-    <div class="preview">
-  <nav class="navbar j-navbar-menu">
-    <i class="iconfont iconmenu"></i>
-  </nav>
-  <div class="preview-image">
-    <h2 class="preview-motto" id="motto">我在开了灯的床头下，想问问自己的心啊。</h2>
-    <!-- <span class="preview-cursor">|</span> -->
-    
-      <div class="preview-overlay">
-        <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-          <defs>
-            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-          </defs>
-          <g class="preview-parallax">
-            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(var(--color-background-rgb),0.7"></use>
-            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(var(--color-background-rgb),0.5)"></use>
-            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(var(--color-background-rgb),0.3)"></use>
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="var(--color-background)"></use>
-          </g>
-        </svg>
-      </div>
-    
-  </div>
-  <div class="preview-scroll">
-    <a href="#container" class="smooth-scroll"><i class="iconfont iconMouse"></i></a>
-  </div>
-</div>
-  
-  <div class="container" id="container">
-    <section class="row post">
-  
-    
-
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/12/hello-world/" class="post-image">
-      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/12/hello-world/" title="Hello World" >Hello World</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>十二月 18, 2020</span>
+  <section class="archive">
+    <div class="archive-container">
+      <div class="archive-post">
+        <h3 class="archive-total"># 生物信息学</h3>
         
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>444</span>
+        
+          
+            <h3 class="archive-year">2020 年</h3>
+          
+          <div class="archive-item">
+            <a class="archive-date" href="/2020/10/RNA-seq-Find%20FPKM/">10/30</a>
+            <a class="archive-title" href="/2020/10/RNA-seq-Find%20FPKM/">RNA_seq_求FPKM值</a>
+          </div>
+        
       </div>
     </div>
-  </div>
-</div>
-
-  
-    
-
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/10/RNA-seq-Find%20FPKM/" class="post-image">
-      <img   class="lazyload" data-original="https://tool.liumingye.cn/bingimg/img.php" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/10/RNA-seq-Find%20FPKM/" title="RNA_seq_求FPKM值" >RNA_seq_求FPKM值</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">#复制
-1cp &amp;#x2F;share&amp;#x2F;disk1&amp;#x2F;home&amp;#x2F;student&amp;#x2F;daizr&amp;#x2F;Training&amp;#x2F;data&amp;#x2F;*cl...</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 30, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>1522</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-    
-
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/" class="post-image">
-      <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%9D%A1%E5%8D%9A%E5%AE%A2/" title="我的第一条博客" >我的第一条博客</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">test
-B型血
-</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 30, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>9</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-    
-
-<div class="col-lg-4 col-md-6 col-sm-12 post-item">
-  <div class="post-wrap">
-    
-    <a href="/2020/10/config-zsh/" class="post-image">
-      <img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJFRot.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
-    </a>
-    <div class="post-content">
-      <div class="post-content-wrap">
-        <h3 class="post-title"><a href="/2020/10/config-zsh/" title="配置一个简洁，高效的zsh" >配置一个简洁，高效的zsh</a></h3>
-        <div class="post-excerpt">
-          <p class="substr-3">&amp;emsp;&amp;emsp;shell是类Unix系统中超级好用的工具，而zsh是shell中的佼佼者，但是现在网上一搜索zsh的配置方案，遍地都是的互相复制粘贴的oh-my-zsh配置方案。事实上...</p>
-        </div>
-      </div>
-      <div class="post-info">
-        <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 29, 2020</span>
-        
-        <span class="post-info-item"><i class="iconfont iconfont-size"></i>2356</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-  
-</section>
-    <section class="paginator">
-  
-</section>
-  </div>
+  </section>
 </main>
   
 

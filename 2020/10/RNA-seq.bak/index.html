@@ -11,8 +11,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="google" content="notranslate" />
   
-  <meta name="description" content="[TOC]
-复制1cp &#x2F;share&#x2...">
+  <meta name="description" content="复制1cp &#x2F;share&#x2F;disk...">
   <meta name="author" content="Lang">
   <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
   <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
@@ -183,14 +182,13 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 30, 2020</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1508</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>1502</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
-        <p>[TOC]</p>
-<h1 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs linux">cp &#x2F;share&#x2F;disk1&#x2F;home&#x2F;student&#x2F;daizr&#x2F;Training&#x2F;data&#x2F;*clean.fq.gz .&#x2F;<br></code></pre></td></tr></table></figure>
+        <h1 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs linux">cp &#x2F;share&#x2F;disk1&#x2F;home&#x2F;student&#x2F;daizr&#x2F;Training&#x2F;data&#x2F;*clean.fq.gz .&#x2F;<br></code></pre></td></tr></table></figure>
 <h1 id="提取"><a href="#提取" class="headerlink" title="提取"></a>提取</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs linux">cat Zz_10_2.clean.fq | head -n 40000 | tail -n +1&gt;Zz_10_2.1-40000.clean.fq<br></code></pre></td></tr></table></figure>
 <h1 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs linux">gzip -c Zz_10_2.1-40000.clean.fq&gt;Zz_10_2.1-40000.clean.fq.gz<br></code></pre></td></tr></table></figure>
 <h1 id="质控"><a href="#质控" class="headerlink" title="质控"></a>质控</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs linux">&#x2F;share&#x2F;disk1&#x2F;home&#x2F;student&#x2F;daizr&#x2F;Training&#x2F;data&#x2F;fastp -i Zz_10_1.1-40000.clean.fq.gz -o Zz_10_1.1-40000.clean.fastp.fq.gz -I Zz_10_2.1-40000.clean.fq.gz -O Zz_10_2.1-40000.clean.fastp.fq.gz -q 20 -u 50 -w 16<br></code></pre></td></tr></table></figure>

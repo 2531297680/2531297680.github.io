@@ -182,10 +182,6 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 29, 2020</span>
       
-        <span class="post-info-item">
-          <i class="iconfont iconeye"></i><span id="/2020/10/config-zsh/" class="leancloud" data-flag-title="配置一个简洁，高效的zsh"></span>
-        </span>
-      
       <span class="post-info-item"><i class="iconfont iconfont-size"></i>2356</span>
     </div>
   </div>
@@ -415,43 +411,6 @@
 <script src="/js/script.js"></script>
 
 
-
-  <script>
-  $.getScript("//cdn.jsdelivr.net/npm/leancloud-storage@4.1.0/dist/av-min.js", () => {
-
-    AV.init({
-      appId: 'meUBpT295IOboGtBhM5jxhhM-9Nh9j0Va',
-      appKey: 'XDzGqXP3m9eSJlcfnFabKAxk',
-      serverURLs: 'https://leancloud.cn/',
-    });
-
-    const showCount = (Counter) => {
-      const asyncLimit = new AsyncLimit(2);
-      $(".leancloud").each(async (e) => {
-        const url = $(".leancloud").eq(e).attr('id').trim();
-        const query = new AV.Query("Counter");
-        query.equalTo("words", url);
-        let count = await asyncLimit.run(() => query.count());
-        $(".leancloud").eq(e).text(count ? count : '--');
-      });
-    }
-
-    const addCount = (Counter) => {
-      const url = $(".leancloud").length === 1 ? $(".leancloud").attr('id').trim() : 'https://Gin-wl.github.io';
-      var query = new Counter;
-      query.save({
-        words: url
-      });
-    }
-
-    $(function () {
-      const Counter = AV.Object.extend("Counter");
-      addCount(Counter);
-      showCount(Counter);
-    });
-
-  });
-</script>
 
 
 

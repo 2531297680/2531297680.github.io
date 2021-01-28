@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>配置一个简洁，高效的zsh - Gin&#39;s Blog</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
+  
+  <meta name="description" content="&emsp;&emsp;shell是类Unix系统中超...">
+  <meta name="author" content="Gin">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+  
+    
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1445822_s6x2xcokxrl.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: '/images/theme/loading.gif'
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://ae01.alicdn.com/kf/H53761570e4ba4481a0b159a7792f98038.jpg',
+        wechat: 'https://ae01.alicdn.com/kf/Ha754e8a20da7413096387653cbbc7308Y.png'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: 'http://tool.liumingye.cn/bingimg/img.php',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          api: 'https://v1.hitokoto.cn/?encode=text&c=a&c=b&c=c&c=d&c=e&c=f&c=g&c=h&c=i&c=j&c=k&c=l',
+          data_contents: ''
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        model: 'simple'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="lock-screen">
+  <div class="loading"></div>
+  
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+    </div>
+    <div class="center">配置一个简洁，高效的zsh</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+
+<nav class="menu">
+  <div class="menu-wrap">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJFRot.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">配置一个简洁，高效的zsh</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>十月 29, 2020</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>2356</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <p>&emsp;&emsp;shell是类Unix系统中超级好用的工具，而zsh是shell中的佼佼者，但是现在网上一搜索zsh的配置方案，遍地都是的互相复制粘贴的oh-my-zsh配置方案。<strong>事实上oh-my-zsh并不好用</strong>，严重拖慢zsh的速度，反而让你的工作并不高效。现在将我自己的使用方案分享给大家，教大家配置一个高效好用的zsh。</p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJFRot.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJFRot.png</span></p>
+<h2 id="安装zsh"><a href="#安装zsh" class="headerlink" title="安装zsh"></a>安装zsh</h2><p>&emsp;&emsp;我笔记本电脑使用的是Archlinux，服务器使用的是Ubuntu。主要介绍这两个发行版的配置方法，红帽系的发行版请自行尝试。</p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGFqHI.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGFqHI.png</span></p>
+<p>&emsp;&emsp;我个人喜欢尽量从发行版的源里安装。从源安装具有方便，稳定，容易维护等优点。</p>
+<h3 id="Archlinux-安装-zsh"><a href="#Archlinux-安装-zsh" class="headerlink" title="Archlinux 安装 zsh"></a>Archlinux 安装 zsh</h3><p>&emsp;&emsp;终端里面输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -Sy zsh<br></code></pre></td></tr></table></figure>
+
+<h3 id="Ubuntu-安装-zsh"><a href="#Ubuntu-安装-zsh" class="headerlink" title="Ubuntu 安装 zsh"></a>Ubuntu 安装 zsh</h3><p>&emsp;&emsp;终端里面输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install zsh<br></code></pre></td></tr></table></figure>
+
+<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>&emsp;&emsp;我只需要两个插件：</p>
+<ul>
+<li><strong>zsh-autosuggestions</strong>  这个是自动建议插件，能够自动提示你需要的命令。</li>
+<li><strong>zsh-syntax-highlighting</strong>  这个是代码高亮插件，能够使你的命令行各个命令清晰明了。</li>
+</ul>
+<p>&emsp;&emsp;还有一个主题：</p>
+<ul>
+<li><strong>zsh-theme-powerlevel10k</strong>  这个主题提供漂亮的prompt，可以显示当前路径，显示时间，显示命令执行成功与否，还能够支持 git 分支显示等等。</li>
+</ul>
+<p>&emsp;&emsp;同样是尽可能从源里面安装</p>
+<blockquote>
+<p>Ubuntu 20.10 的源里面是 <code>powerlevel9k</code>，配置好后实际使用体验和 <code>powerlevel10k</code> 差别不大。</p>
+</blockquote>
+<h3 id="Archlinux-安装插件和主题"><a href="#Archlinux-安装插件和主题" class="headerlink" title="Archlinux 安装插件和主题"></a>Archlinux 安装插件和主题</h3><p>&emsp;&emsp;终端里面输入命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo pacman -S zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel10k zsh-completions<br></code></pre></td></tr></table></figure>
+<h3 id="Ubuntu-安装插件和主题"><a href="#Ubuntu-安装插件和主题" class="headerlink" title="Ubuntu 安装插件和主题"></a>Ubuntu 安装插件和主题</h3><p>&emsp;&emsp;终端里面输入命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get install zsh-autosuggestions zsh-syntax-highlighting zsh-theme-powerlevel9k<br></code></pre></td></tr></table></figure>
+<p>&emsp;&emsp;这样插件和主题就安装好了。</p>
+<h2 id="更改默认的shell，并配置插件和主题"><a href="#更改默认的shell，并配置插件和主题" class="headerlink" title="更改默认的shell，并配置插件和主题"></a>更改默认的shell，并配置插件和主题</h2><p>&emsp;&emsp;安装好了之后就是启用zsh，并且配置插件和主题了。</p>
+<h3 id="更改默认的shell"><a href="#更改默认的shell" class="headerlink" title="更改默认的shell"></a>更改默认的shell</h3><p>&emsp;&emsp;终端输入命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">chsh -s /usr/bin/zsh<br></code></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;Archlinux 和 Ubuntu 都是同样的操作，然后注销并重新登录，就启用了zsh。第一次进入zsh会自动出现一个配置界面，这个界面可以根据需要自定义zsh。</p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGvNVO.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGvNVO.png</span></p>
+<p>&emsp;&emsp;在这里输入 1 就可以进入配置界面了。</p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BGxAFe.md.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BGxAFe.md.png</span></p>
+<p>&emsp;&emsp;配置界面中各个菜单代表的意思分别是：</p>
+<ul>
+<li>1：设置命令历史记录相关的选项</li>
+<li>2：设置命令补全系统</li>
+<li>3：设置热建</li>
+<li>4：选择各种常见的选项，只需要选择“开”或者“关”</li>
+<li>0：退出，并使用空白（默认）配置</li>
+<li>a：终止设置并退出</li>
+<li>q：退出</li>
+</ul>
+<p>&emsp;&emsp;这里根据提示，然后按照你自己的喜好配置就可以了。配置好后，会在你的用户目录下生成 <code>.zshrc</code> 文件。然后我们要去这个文件中启用插件和主题。</p>
+<h3 id="配置插件和主题"><a href="#配置插件和主题" class="headerlink" title="配置插件和主题"></a>配置插件和主题</h3><p>&emsp;&emsp;zsh的配置文件是 <code>~/.zshrc</code> 文件，这个文件在你的用户目录下 <code>~/</code>。删掉了这个文件，再次进入zsh，又会触发zsh的配置界面。</p>
+<h4 id="Archlinux-启用插件和主题"><a href="#Archlinux-启用插件和主题" class="headerlink" title="Archlinux 启用插件和主题"></a>Archlinux 启用插件和主题</h4><p>&emsp;&emsp;打开 <code>~/.zshrc</code> 文件，将以下行代码添加到其中：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh/</span>plugins<span class="hljs-regexp">/zsh-syntax-highlighting/</span>zsh-syntax-highlighting.zsh<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh/</span>plugins<span class="hljs-regexp">/zsh-autosuggestions/</span>zsh-autosuggestions.zsh<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-theme-powerlevel10k/</span>powerlevel10k.zsh-theme<br></code></pre></td></tr></table></figure>
+<h4 id="Ubuntu-启用插件和主题"><a href="#Ubuntu-启用插件和主题" class="headerlink" title="Ubuntu 启用插件和主题"></a>Ubuntu 启用插件和主题</h4><p>&emsp;&emsp;打开 <code>~/.zshrc</code> 文件，将以下行代码添加到其中：</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs gradle"><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/powerlevel9k/</span>powerlevel9k.zsh-theme<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-autosuggestions/</span>zsh-autosuggestions.zsh<br><span class="hljs-keyword">source</span> <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zsh-syntax-highlighting/</span>zsh-syntax-highlighting.zsh<br></code></pre></td></tr></table></figure>
+<p>&emsp;&emsp;这样就成功的启用了插件和主题，插件不需要额外的配置就很好用，有额外配置需求的可以自行研究。</p>
+<p>&emsp;&emsp;而 <code>powerlevel10k</code> 主题在首次进入时，会触发一个配置界面。</p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJ9yE6.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJ9yE6.png</span></p>
+<p>&emsp;&emsp;根据提示和你的喜好一步步完成配置即可。</p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJC6Ln.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJC6Ln.png</span></p>
+<p>这里可以选择你喜欢的 <code>prompt</code>。</p>
+<p><strong>配置完成后就可以愉快的使用啦！</strong></p>
+<p><img    class="lazyload" data-original="https://s1.ax1x.com/2020/10/29/BJPlT0.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">BJPlT0.png</span></p>
+
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>Gin</li>
+    <li><strong>本文链接：</strong><a href="https://github.com/Gin-wl/Gin-wl.github.io/2020/10/config-zsh/index.html" title="https:&#x2F;&#x2F;github.com&#x2F;Gin-wl&#x2F;Gin-wl.github.io&#x2F;2020&#x2F;10&#x2F;config-zsh&#x2F;index.html">https:&#x2F;&#x2F;github.com&#x2F;Gin-wl&#x2F;Gin-wl.github.io&#x2F;2020&#x2F;10&#x2F;config-zsh&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://ae01.alicdn.com/kf/H53761570e4ba4481a0b159a7792f98038.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
+  </div>
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
+</section>
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Archlinux/" rel="tag">Archlinux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/" rel="tag">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/powerlevel10k/" rel="tag">powerlevel10k</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zsh/" rel="tag">zsh</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a href="/2020/10/FirstBlog/"><i class="iconfont iconleft"></i>我的第一条博客</a>
+    <a></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "x09uys6hs3vGvWI9ko321dWD-9Nh9j0Va",
+        app_key: "kbRL6VL3sG8DGAlywbJ8vrX5",
+        placeholder: "请输入评论内容",
+        avatar: "mp",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    if ( true ) {
+      $("#comments-btn").on("click", function () {
+        $(this).hide();
+        loadValine();
+      });
+    } else {
+      loadValine();
+    }
+  };
+</script>
+
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85zsh"><span class="toc-text">安装zsh</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Archlinux-%E5%AE%89%E8%A3%85-zsh"><span class="toc-text">Archlinux 安装 zsh</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu-%E5%AE%89%E8%A3%85-zsh"><span class="toc-text">Ubuntu 安装 zsh</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="toc-text">安装插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Archlinux-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98"><span class="toc-text">Archlinux 安装插件和主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ubuntu-%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98"><span class="toc-text">Ubuntu 安装插件和主题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E7%9A%84shell%EF%BC%8C%E5%B9%B6%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98"><span class="toc-text">更改默认的shell，并配置插件和主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E7%9A%84shell"><span class="toc-text">更改默认的shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%8F%92%E4%BB%B6%E5%92%8C%E4%B8%BB%E9%A2%98"><span class="toc-text">配置插件和主题</span></a></li></ol></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=2531297680 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="https://github.com/Gin-wl "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:wl6639@gmail.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
+</footer>
+  
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+    <div class="scrollbar j-scrollbar">
+  <div class="scrollbar-current j-scrollbar-current"></div>
+</div>
+  
+  
+    
+<script src="/js/color-mode.js"></script>
+
+  
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
